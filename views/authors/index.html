@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- file: views/professor.php -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" style="margin-top: 15px">
+      <a class="three columns button button-primary" href="/">Inicio</a>
+      <a class="three columns button button-primary" href="/books">Libros</a>
+      <a class="three columns button button-primary" href="/authors">Autores</a>
+      <a class="three columns button button-primary" href="/publishers">Editoriales</a>
+    </div>
+    <h3 style="margin-top: 15px">Información de autores</h3>
+    <p>Esta sección presenta Información sobre los autores</p>
+    <a class="button button-primary" href="/authors/create">Nuevo autor</a>
+    <table class="u-full-width">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Nacionalidad</th>
+          <th>Año nacimiento</th>
+          <th>Campos</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#authors}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{author}}</td>
+        <td>{{nationality}}</td>
+        <td>{{birth_year}}</td>
+        <td>{{fields}}</td>
+        <td>
+          <a class="button" href="/authors/{{id}}">Mostrar</a>
+          <a class="button" href="/authors/{{id}}/edit">Editar</a>
+          <a class="button" href="/authors/{{id}}/delete">Borrar</a>
+        </td>
+      </tr>
+      {{/authors}}
+      </tbody>
+    </table>
+    <div class="row" style="margin-top: 15px">
+      <button disabled="disabled" class="twelve columns button-primary">
+        Tarea 2 - David Rojas Chavarria UNA
+      </button>
+    </div>
+  </div>
+</body>

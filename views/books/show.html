@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- file: views/professor.php -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" style="margin-top: 15px">
+      <a class="three columns button button-primary" href="/">Inicio</a>
+      <a class="three columns button button-primary" href="/books">Libros</a>
+      <a class="three columns button button-primary" href="/authors">Autores</a>
+      <a class="three columns button button-primary" href="/publishers">Editoriales</a>
+    </div>
+    <div class="row">
+      {{#book}}
+      <div class="six columns">
+        <h4>{{title}}</h4>
+      Por <a href="/authors/{{author_id}}">{{author}}</a><br>
+      Edición: {{edition}}; Derechos de autor: {{copyright}}; 
+      Idioma: {{language}}; Páginas: {{pages}}<br>
+      Publicado por <a href="/publishers/{{publisher_id}}">{{publisher}}</a><br><br>
+    </div>
+    {{/book}}
+    <div class="two columns"></div>
+    </div>
+    <div class="row" style="margin-top: 15px">
+      <button disabled="disabled" class="twelve columns button-primary">
+        Tarea 2 - David Rojas Chavarria UNA
+      </button>
+    </div>
+  </div>
+</body>

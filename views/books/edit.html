@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- file: views/professor.php -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" style="margin-top: 15px">
+      <a class="three columns button button-primary" href="/">Inicio</a>
+      <a class="three columns button button-primary" href="/books">Libros</a>
+      <a class="three columns button button-primary" href="/authors">Autores</a>
+      <a class="three columns button button-primary" href="/publishers">Editoriales</a>
+    </div>
+    {{#book}}
+    <form action="/books/{{id}}" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="row">
+      <div class="six columns">
+        <h4>Nombre del libro:</h4> 
+        <input type="text" class="u-full-width" name="title" value="{{title}}"/>
+        <label>Edición:</label> 
+        <input type="text" class="u-full-width" name="edition" value="{{edition}}"/>
+        <label>Derechos de autor:</label> 
+        <input type="number" class="u-full-width" name="copyright" value="{{copyright}}"/>
+        <label>Idioma:</label> 
+        <input type="text" class="u-full-width" name="language" value="{{language}}"/>
+        <label>Páginas:</label> 
+        <input type="number" class="u-full-width" name="pages" value="{{pages}}"/>
+        <label>Autor:</label> 
+        <input type="hidden" id="curr_author_id" value= "{{author_id}}"/>
+        <input type="hidden" id="curr_publisher_id" value= "{{publisher_id}}"/>
+        <select class="u-full-width" name="author_id" id="author_id" >  
+        {{/book}}
+        {{#authors}}
+        <option value="{{id}}">{{author}}</option>
+        {{/authors}}
+        </select>
+        <label>Editorial:</label> 
+        <select class="u-full-width" name="publisher_id" id="publisher_id">
+        {{#publishers}}
+        <option value="{{id}}">{{publisher}}</option>
+        {{/publishers}}
+      </select>
+      </div>
+    </div>
+    <input class="button-primary" type="submit" value="Modificar">
+   </form>
+    <div class="row" style="margin-top: 15px">
+      <button disabled="disabled" class="twelve columns button-primary">
+        Tarea 2 - David Rojas Chavarria UNA
+      </button>
+    </div>
+  </div>
+  {{#book}}
+  <script>
+    let cmdAuthor = document.querySelector("#author_id");
+    cmdAuthor.value = document.querySelector("#curr_author_id").value;
+    let cmdPublisher = document.querySelector("#publisher_id");
+    cmdPublisher.value = document.querySelector("#curr_publisher_id").value;
+  </script>
+  {{/book}}
+</body>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- file: views/professor.php -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" style="margin-top: 15px">
+      <a class="three columns button button-primary" href="/">Inicio</a>
+      <a class="three columns button button-primary" href="/books">Libros</a>
+      <a class="three columns button button-primary" href="/authors">Autores</a>
+      <a class="three columns button button-primary" href="/publishers">Editoriales</a>
+    </div>
+    <h3 style="margin-top: 15px">Información de libros</h3>
+     <p>Esta sección presenta Información sobre los libros</p>
+     <a class="button button-primary" href="/books/create">Nuevo libro</a>
+   <table class="u-full-width">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Título</th>
+        <th>Edición</th>
+        <th>Derechos de autor</th>
+        <th>Idioma</th>
+        <th>Páginas</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#books}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{title}}</td>
+      <td>{{edition}}</td>
+      <td>{{copyright}}</td>
+      <td>{{language}}</td>
+      <td>{{pages}}</td>
+      <td>
+        <a class="button" href="/books/{{id}}">Mostrar</a>
+        <a class="button" href="/books/{{id}}/edit">Editar</a>
+        <a class="button" href="/books/{{id}}/delete">Borrar</a>
+      </td>
+    </tr>
+    {{/books}}
+    </tbody>
+  </table>
+    <div class="row" style="margin-top: 15px">
+      <button disabled="disabled" class="twelve columns button-primary">
+        Tarea 2 - David Rojas Chavarria UNA
+      </button>
+    </div>
+  </div>
+</body>

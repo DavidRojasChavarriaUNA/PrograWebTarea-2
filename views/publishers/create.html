@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- file: views/professor.php -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" style="margin-top: 15px">
+      <a class="three columns button button-primary" href="/">Inicio</a>
+      <a class="three columns button button-primary" href="/books">Libros</a>
+      <a class="three columns button button-primary" href="/authors">Autores</a>
+      <a class="three columns button button-primary" href="/publishers">Editoriales</a>
+    </div>
+    <form action="/publishers" method="post">
+    <div class="row">
+      <div class="six columns">
+        <h4>Nombre de la editorial:</h4> 
+        <input type="text" class="u-full-width" name="publisher" />
+        <label>País:</label> 
+        <input type="text" class="u-full-width" name="country" />
+        <label>Año Fundación:</label> 
+        <input type="text" class="u-full-width" name="founded" />
+        <label>Genero:</label> 
+        <textarea type="text" class="u-full-width" name="genere"></textarea>
+      </div>
+    </div>
+    <input class="button-primary" type="submit" value="Crear">
+   </form>
+    <div class="row" style="margin-top: 15px">
+      <button disabled="disabled" class="twelve columns button-primary">
+        Tarea 2 - David Rojas Chavarria UNA
+      </button>
+    </div>
+  </div>
+</body>
