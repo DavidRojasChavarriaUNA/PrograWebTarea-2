@@ -1,8 +1,8 @@
 <?php
 
-  include_once('./Models/Books.php');
+  include_once('./models/Books.php');
   include_once('./models/Authors.php');
-  include_once('./Models/Publishers.php');
+  include_once('./models/Publishers.php');
 
   class BooksController extends Controller {
     public function index() {

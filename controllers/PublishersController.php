@@ -1,6 +1,6 @@
 <?php
 
-  include_once('./Models/Publishers.php');
+  include_once('./models/Publishers.php');
 
   class PublishersController extends Controller {
     public function index() {
